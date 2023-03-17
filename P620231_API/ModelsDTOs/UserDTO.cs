@@ -14,6 +14,8 @@
 
         //en este he decidido escribir los nombres en espanol solo por ejemplo de uso de los DTOs
 
+
+
         public int IDUsuario { get; set; }
         public string Nombre { get; set; } = null!;
         public string Correo { get; set; } = null!;

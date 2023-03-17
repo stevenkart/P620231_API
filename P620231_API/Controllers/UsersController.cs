@@ -125,6 +125,8 @@ namespace P620231_API.Controllers
             return list;
         }
 
+
+
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -156,11 +158,16 @@ namespace P620231_API.Controllers
             return NoContent();
         }
 
+
+        /*
+
+
         // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
+  
             string EncriptedPassword = MyCrypto.EncriptarEnUnSentido(user.LoginPassword);
 
             user.LoginPassword = EncriptedPassword;
@@ -170,6 +177,34 @@ namespace P620231_API.Controllers
 
             return CreatedAtAction("GetUser", new { id = user.UserId }, user);
         }
+
+        */
+
+
+
+        // POST: api/Users
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<User>> PostUser(User user)
+        {
+            
+            string EncriptedPassword = MyCrypto.EncriptarEnUnSentido(user.LoginPassword);
+
+            user.LoginPassword = EncriptedPassword;
+
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetUser", new { id = user.UserId }, user);
+        }
+
+
+
+
+
+
+
+
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]

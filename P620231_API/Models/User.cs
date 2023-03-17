@@ -5,10 +5,12 @@ namespace P620231_API.Models
 {
     public partial class User
     {
+        
         public User()
         {
             Appointments = new HashSet<Appointment>();
         }
+      
 
         public int UserId { get; set; }
         public string Name { get; set; } = null!;
@@ -20,8 +22,10 @@ namespace P620231_API.Models
         public int UserRoleId { get; set; }
         public int UserStatusId { get; set; }
 
-        public virtual UserRole UserRole { get; set; } = null!;
-        public virtual UserStatus UserStatus { get; set; } = null!;
-        public virtual ICollection<Appointment> Appointments { get; set; }
+        public virtual UserRole? UserRole { get; set; } = null!;
+        public virtual UserStatus? UserStatus { get; set; } = null!;
+        public virtual ICollection<Appointment>? Appointments { get; set; } = null!;
+
+
     }
 }
