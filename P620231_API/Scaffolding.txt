@@ -1,1 +1,1 @@
-﻿Scaffold-DbContext -f "SERVER=STEVEN-LAPTOP;DATABASE=P620231_AutoAppo;INTEGRATED SECURITY=TRUE; User Id=;Password=" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models 
+﻿Scaffold-DbContext -f "SERVER=STEVEN-LAPTOP;DATABASE=P620231_AutoAppo;INTEGRATED SECURITY=TRUE; User Id=;Password=" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
